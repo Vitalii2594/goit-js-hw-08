@@ -8,11 +8,11 @@ const player = new Vimeo(playerIframe);
 const savePlaybackTime = throttle(async () => {
   const currentTime = await player.getCurrentTime();
   localStorage.setItem('videoplayer-current-time', currentTime.toString());
-}, 1000); // Оновлюємо час не частіше
+}, 1000);
 
 player.on('timeupdate', savePlaybackTime);
 
-// Функція для відновлення збереженої позиції
+// Function to restore a saved position
 async function restorePlaybackTime() {
   const savedTime = localStorage.getItem('videoplayer-current-time');
   if (savedTime !== null) {
@@ -20,5 +20,5 @@ async function restorePlaybackTime() {
   }
 }
 
-// Викликаємо функцію відновлення після завантаження сторінки
+// Call the recovery function after the page has loaded
 window.addEventListener('DOMContentLoaded', restorePlaybackTime);

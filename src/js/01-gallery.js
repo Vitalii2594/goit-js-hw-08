@@ -1,22 +1,22 @@
-import { galleryItems } from "./gallery-items.js";
+import { galleryItems } from './gallery-items.js';
 
-// Описаний в документації
-import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
-import "simplelightbox/dist/simple-lightbox.min.css";
+// Described in the documentation
+import SimpleLightbox from 'simplelightbox';
+// Optional import of styles
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const galleryList = document.querySelector(".gallery");
+const galleryList = document.querySelector('.gallery');
 
 function createGalleryItem(item) {
-  const galleryItem = document.createElement("li");
-  galleryItem.classList.add("gallery__item");
+  const galleryItem = document.createElement('li');
+  galleryItem.classList.add('gallery__item');
 
-  const galleryLink = document.createElement("a");
-  galleryLink.classList.add("gallery__link");
+  const galleryLink = document.createElement('a');
+  galleryLink.classList.add('gallery__link');
   galleryLink.href = item.original;
 
-  const galleryImage = document.createElement("img");
-  galleryImage.classList.add("gallery__image");
+  const galleryImage = document.createElement('img');
+  galleryImage.classList.add('gallery__image');
   galleryImage.src = item.preview;
   galleryImage.alt = item.description;
 
@@ -28,7 +28,7 @@ function createGalleryItem(item) {
 
 function createGallery(items) {
   const galleryFragment = document.createDocumentFragment();
-  items.forEach((item) => {
+  items.forEach(item => {
     const galleryItem = createGalleryItem(item);
     galleryFragment.appendChild(galleryItem);
   });
@@ -37,10 +37,10 @@ function createGallery(items) {
 
 createGallery(galleryItems);
 
-const lightbox = new SimpleLightbox(".gallery__link", {
+const lightbox = new SimpleLightbox('.gallery__link', {
   alertError: false,
-  captionsData: "alt",
-  fileExt: "png|jpg|jpeg|gif",
+  captionsData: 'alt',
+  fileExt: 'png|jpg|jpeg|gif',
   animationSpeed: 50,
   showCounter: true,
   captionDelay: 250,
