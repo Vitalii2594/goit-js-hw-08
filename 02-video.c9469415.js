@@ -372,8 +372,8 @@ u=setTimeout(v,(e=o-c,n=o-l,r=t-e,f?el(r,i-n):r))}function y(e){return(// Only i
 (u=void 0,d&&r)?h(e):(r=o=void 0,a))}function m(){var e,n=es(),i=p(n);if(r=arguments,o=this,c=n,i){if(void 0===u)return(// Reset any `maxWait` timer.
 l=e=c,// Start the timer for the trailing edge.
 u=setTimeout(v,t),s?h(e):a);if(f)return(// Handle invocations in a tight loop.
-u=setTimeout(v,t),h(c))}return void 0===u&&(u=setTimeout(v,t)),a}return t=ed(t)||0,ef(n)&&(s=!!n.leading,i=(f="maxWait"in n)?ec(ed(n.maxWait)||0,t):i,d="trailing"in n?!!n.trailing:d),m.cancel=function(){void 0!==u&&clearTimeout(u),l=0,r=c=o=u=void 0},m.flush=function(){return void 0===u?a:y(es())},m}(e,t,{leading:r,maxWait:t,trailing:o})};const eh=document.getElementById("vimeo-player"),ep=new Q(eh),ev=((a=J)&&a.__esModule?a.default:a)(async()=>{let e=await ep.getCurrentTime();localStorage.setItem("videoplayer-current-time",e.toString())},1e3);// Функція для відновлення збереженої позиції
-async function ey(){let e=localStorage.getItem("videoplayer-current-time");null!==e&&await ep.setCurrentTime(parseFloat(e))}ep.on("timeupdate",ev),// Викликаємо функцію відновлення після завантаження сторінки
-window.addEventListener("DOMContentLoaded",ey);//# sourceMappingURL=02-video.b3344ece.js.map
+u=setTimeout(v,t),h(c))}return void 0===u&&(u=setTimeout(v,t)),a}return t=ed(t)||0,ef(n)&&(s=!!n.leading,i=(f="maxWait"in n)?ec(ed(n.maxWait)||0,t):i,d="trailing"in n?!!n.trailing:d),m.cancel=function(){void 0!==u&&clearTimeout(u),l=0,r=c=o=u=void 0},m.flush=function(){return void 0===u?a:y(es())},m}(e,t,{leading:r,maxWait:t,trailing:o})};const eh=document.getElementById("vimeo-player"),ep=new Q(eh),ev=((a=J)&&a.__esModule?a.default:a)(async()=>{let e=await ep.getCurrentTime();localStorage.setItem("videoplayer-current-time",e.toString())},1e3);// Function to restore a saved position
+async function ey(){let e=localStorage.getItem("videoplayer-current-time");null!==e&&await ep.setCurrentTime(parseFloat(e))}ep.on("timeupdate",ev),// Call the recovery function after the page has loaded
+window.addEventListener("DOMContentLoaded",ey);//# sourceMappingURL=02-video.c9469415.js.map
 
-//# sourceMappingURL=02-video.b3344ece.js.map
+//# sourceMappingURL=02-video.c9469415.js.map
